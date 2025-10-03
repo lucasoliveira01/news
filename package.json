@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev --turbopack"
+    "dev": "next dev --turbopack",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "next": "^15.5.4",
     "react": "^19.2.0",
     "react-com": "^1.0.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }
