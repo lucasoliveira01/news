@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "dev": "next dev --turbopack",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write ."
@@ -17,6 +18,7 @@
     "react-com": "^1.0.6"
   },
   "devDependencies": {
+    "jest": "^29.6.2",
     "prettier": "^3.6.2"
   }
 }
