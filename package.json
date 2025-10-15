@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watchAll",
     "dev": "next dev --turbopack",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write ."
