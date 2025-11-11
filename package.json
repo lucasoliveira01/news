@@ -6,7 +6,10 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "dev": "next dev --turbopack",
+    "dev": "npm run services:up && next dev --turbopack",
+    "services:up": "docker-compose -f infra/compose.yml up -d",
+    "services:stop": "docker-compose -f infra/compose.yml stop",
+    "services:down": "docker-compose -f infra/compose.yml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write ."
   },

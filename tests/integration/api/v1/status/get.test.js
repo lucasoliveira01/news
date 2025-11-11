@@ -1,7 +1,20 @@
 test("GET to /api/v1/status returns 200 and correct message", async () => {
   const res = await fetch("http://localhost:3000/api/v1/status");
-  const data = await res.json();
-
   expect(res.status).toBe(200);
-  expect(data).toEqual({ data: "São acima da média" });
+
+  const responseBody = await res.json();
+
+  expect(responseBody.updated_at).toBeDefined();
+
+  const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
+  expect(parsedUpdatedAt).toBe(responseBody.updated_at);
+
+  expect(responseBody.postgres_version).toBeDefined();
+  expect(responseBody.postgres_version).toBe("16.0");
+
+  expect(responseBody.postgres_max_connections).toBeDefined();
+  expect(responseBody.postgres_max_connections).toEqual(expect.any(Number));
+
+  expect(responseBody.postgres_used_connections).toBeDefined();
+  expect(responseBody.postgres_used_connections).toEqual(1);
 });
