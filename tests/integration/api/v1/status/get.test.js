@@ -10,7 +10,7 @@ test("GET to /api/v1/status returns 200 and correct message", async () => {
   expect(parsedUpdatedAt).toBe(responseBody.updated_at);
 
   expect(responseBody.dependencies.postgres_version).toBeDefined();
-  expect(responseBody.dependencies.postgres_version).toBe("16.0");
+  expect(responseBody.dependencies.postgres_version).toBe("17.7");
 
   expect(responseBody.dependencies.postgres_max_connections).toBeDefined();
   expect(responseBody.dependencies.postgres_max_connections).toEqual(
