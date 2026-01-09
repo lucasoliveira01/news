@@ -18,9 +18,6 @@ export async function GET() {
     values: [databaseName],
   });
 
-  // "SELECT count(1)::int FROM pg_stat_activity WHERE datname = 'postgres';",
-
-  console.log(postgresUsedConnectionsQuery);
   const postgresUsedConnections = postgresUsedConnectionsQuery.rows[0].count;
 
   return NextResponse.json(

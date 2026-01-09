@@ -21,21 +21,22 @@ async function getNewClient() {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DATABASE,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: getSSLValues()
+    ssl: false
   });
 
   await client.connect();
   return client;
 }
 
-function getSSLValues(){
-  if(process.env.POSTGRES_CA){
-    return {
-      ca: process.env.POSTGRES_CA
-    }
-  }
+//Como resolver no coolify?
+// function getSSLValues(){
+//   if(process.env.POSTGRES_CA){
+//     return {
+//       ca: process.env.POSTGRES_CA
+//     }
+//   }
 
-  return process.env.NODE_ENV == "production" ? true : false;
-}
+//   return process.env.NODE_ENV == "production" ? true : false;
+// }
 
 export default { query, getNewClient };
