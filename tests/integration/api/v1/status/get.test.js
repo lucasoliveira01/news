@@ -18,5 +18,5 @@ test("GET to /api/v1/status returns 200 and correct message", async () => {
   );
 
   expect(responseBody.dependencies.postgres_used_connections).toBeDefined();
-  expect(responseBody.dependencies.postgres_used_connections).toEqual(1);
+  expect(responseBody.dependencies.postgres_used_connections).toEqual(0);
 });

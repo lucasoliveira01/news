@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watchAll --runInBand",
     "dev": "npm run services:up && next dev --turbopack",
     "services:up": "docker-compose -f infra/compose.yml up -d",
     "services:stop": "docker-compose -f infra/compose.yml stop",
@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.4",
+    "dotenv-expand": "^11.0.6",
     "next": "^15.5.4",
     "node-pg-migrate": "^6.2.2",
     "pg": "^8.11.3",
